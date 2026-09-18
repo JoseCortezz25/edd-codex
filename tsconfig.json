@@ -7,7 +7,15 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "noEmit": true
+    "noEmit": true,
+    // Mirrors package.json's "imports" map ("#*" -> "./agent/*") so tsc's
+    // "bundler" moduleResolution can resolve "#lib/*" specifiers at
+    // type-check time. Runtime resolution (eve dev/build, Node) already
+    // honors the package.json "imports" field on its own; this "paths"
+    // entry only teaches the type checker the same mapping.
+    "paths": {
+      "#*": ["./agent/*"]
+    }
   },
   "include": ["agent/**/*.ts", "evals/**/*.ts"]
 }
