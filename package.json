@@ -17,6 +17,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^4.0.66",
     "@ai-sdk/openai-compatible": "^3.0.48",
+    "@supabase/supabase-js": "^2.116.0",
     "@vercel/connect": "1.0.0",
     "ai": "^7.0.93",
     "eve": "^0.54.5",
