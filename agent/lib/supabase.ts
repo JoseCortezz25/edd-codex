@@ -11,7 +11,9 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js";
  *
  * Required env vars (see `.env.example`):
  * - SUPABASE_URL
- * - SUPABASE_SERVICE_ROLE_KEY
+ * - SUPABASE_SECRET_KEY (this project's Supabase instance uses the newer
+ *   sb_secret_... key system, not the legacy service_role JWT — the secret
+ *   key is the direct equivalent: full access, bypasses RLS)
  */
 
 let cachedClient: SupabaseClient | null = null;
@@ -20,17 +22,17 @@ export function getSupabaseClient(): SupabaseClient {
   if (cachedClient) return cachedClient;
 
   const url = process.env.SUPABASE_URL;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const secretKey = process.env.SUPABASE_SECRET_KEY;
 
-  if (!url || !serviceRoleKey) {
+  if (!url || !secretKey) {
     throw new Error(
-      "Missing Supabase configuration: set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY " +
+      "Missing Supabase configuration: set SUPABASE_URL and SUPABASE_SECRET_KEY " +
         "in the environment (see .env.example). These are app-runtime secrets, never " +
         "read from inside the sandbox.",
     );
   }
 
-  cachedClient = createClient(url, serviceRoleKey, {
+  cachedClient = createClient(url, secretKey, {
     auth: { persistSession: false },
   });
   return cachedClient;
