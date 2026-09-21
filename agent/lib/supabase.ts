@@ -44,3 +44,10 @@ export const RENDER_CACHE_TABLE = "render_cache";
 
 /** ~3 MiB, the point past which eve keeps an image as a file reference instead of inline bytes. */
 export const INLINE_FILE_BYTE_LIMIT = 3 * 1024 * 1024;
+
+/** Client/brand registry + per-brand content tables. See supabase/migrations/0002_*.sql. */
+export const CLIENTS_TABLE = "clients";
+export const BRANDS_TABLE = "brands";
+export const FOUNDATIONS_TABLE = "foundations";
+export const FRAMEWORKS_TABLE = "frameworks";
+export const LIBRARY_ASSETS_TABLE = "library_assets";
