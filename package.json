@@ -12,6 +12,7 @@
     "dev": "eve dev",
     "eval": "eve eval",
     "start": "eve start",
+    "test": "vitest run",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -25,7 +26,9 @@
   },
   "devDependencies": {
     "@types/node": "24.x",
-    "typescript": "7.0.2"
+    "microsandbox": "^0.7.2",
+    "typescript": "7.0.2",
+    "vitest": "^5.0.1"
   },
   "engines": {
     "node": "24.x"
