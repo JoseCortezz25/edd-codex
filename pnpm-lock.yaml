@@ -177,13 +177,13 @@ importers:
         version: 2.116.0
       '@vercel/connect':
         specifier: 1.0.0
-        version: 1.0.0(ai@7.0.99(zod@4.5.4))(eve@0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.7.2))
+        version: 1.0.0(ai@7.0.99(zod@4.5.4))(eve@0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.5.5))
       ai:
         specifier: ^7.0.93
         version: 7.0.99(zod@4.5.4)
       eve:
         specifier: ^0.54.5
-        version: 0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.7.2)
+        version: 0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.5.5)
       zod:
         specifier: 4.5.4
         version: 4.5.4
@@ -192,8 +192,8 @@ importers:
         specifier: 24.x
         version: 24.13.4
       microsandbox:
-        specifier: ^0.7.2
-        version: 0.7.2
+        specifier: 0.5.5
+        version: 0.5.5
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -240,9 +240,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
-
-  '@microsandbox/types@0.7.2':
-    resolution: {integrity: sha512-K02/NyT4VaC14fXUlC6cC3qBYHMzfkhTEibOzJMh7P99wlbA+SxungRpZqPAm4tOzmClZEoBlC8es52Y7ipUtQ==}
 
   '@oxc-project/types@0.149.0':
     resolution: {integrity: sha512-Efcc+iF0j3Bf67YjEqIqWXbX5XddXoK/Mw4K1/JuXwRCZ8N16VR7iT23nlCc9XrveFVh/E5Rqs2StT0V8v9LdA==}
@@ -381,37 +378,25 @@ packages:
       '@opentelemetry/api':
         optional: true
 
-  '@superradcompany/microsandbox-darwin-arm64@0.7.2':
-    resolution: {integrity: sha512-i6XkuEaWM0IPGK9pWg4CGegxQ3pFrobLLc7C3C4ImjMdAwCUOzYCAqKQUcsuKQmIJixbWRVpIccQOJe/sYkexA==}
+  '@superradcompany/microsandbox-darwin-arm64@0.5.5':
+    resolution: {integrity: sha512-Yy7b2Ak+/WT+Ho3yRrcKclSl+hNVwcEAqtrWFLIQoGIjSCYEsL30r9S21zKFgd7z5o/FMdaGt/sNqWsV47Ar5g==}
     engines: {node: '>= 22'}
     cpu: [arm64]
     os: [darwin]
 
-  '@superradcompany/microsandbox-linux-arm64-gnu@0.7.2':
-    resolution: {integrity: sha512-gU15ar5FtNXfQGiKktdgJdkba5dW5+yDv7gx38sD6QrgqhSOgVsC17yvrPOD+AAdBbj6GTntlbL3ENn/rx7MKQ==}
+  '@superradcompany/microsandbox-linux-arm64-gnu@0.5.5':
+    resolution: {integrity: sha512-rOTT9yv81gEExbu8FDIyVQtN4wUk734jqWVNSXnMOk8CqLlIHZzLw0wRzkvWvuMUQ59B9GHG7jOzIinIkmnlsw==}
     engines: {node: '>= 22'}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@superradcompany/microsandbox-linux-x64-gnu@0.7.2':
-    resolution: {integrity: sha512-5gmMDYjyGXtx+13rWKeI0/f6x7ecDg6aMFVCupgr23IQODQLuGsbvn70LyXUrT0bOlYhle6i4uum2+AwVKTU8Q==}
+  '@superradcompany/microsandbox-linux-x64-gnu@0.5.5':
+    resolution: {integrity: sha512-ZCrZskoX5wR6nQ42AqDXrJXE2t+2+/N3hb522Wudif+09Sr8OXFB3U2NA2YzN6yvzeL4PFga/DX/BT5jtsRjdg==}
     engines: {node: '>= 22'}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
-
-  '@superradcompany/microsandbox-win32-arm64-msvc@0.7.2':
-    resolution: {integrity: sha512-Vhn6POQS6MKuSnthhOHppt8FAS9Lb2TqPr59q/NtBk2AXC4uK5tiUwKQCA/H7E1irzE8YHhT/rvMHufHkYXo7A==}
-    engines: {node: '>= 22'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@superradcompany/microsandbox-win32-x64-msvc@0.7.2':
-    resolution: {integrity: sha512-B33UPd8Tfk+Q7r1w+QmDmwO3e16x7n0wr2c+ynssJRxjoD4llLF+LBN2WeseTtEb32IuOM+nVgeFAFuyL7q4Mg==}
-    engines: {node: '>= 22'}
-    cpu: [x64]
-    os: [win32]
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
@@ -823,8 +808,8 @@ packages:
   merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
 
-  microsandbox@0.7.2:
-    resolution: {integrity: sha512-SKrNTnnOzhLofhDRQAXmXeO5QEkBYzK9e0o+B8WD5FkIONjGks/y/GVcupdsFzZVJXNsusMAfImSFbBzL5E0xw==}
+  microsandbox@0.5.5:
+    resolution: {integrity: sha512-AJBFSIK4TYEO6pNfuXfceq3BcqOj2hxBEQjiXYNv6C4UtGDE2CNSzLwGzT2CCkuucRy+9EWvO8KS/zSZMgd/CA==}
     engines: {node: '>= 22'}
     hasBin: true
 
@@ -1111,8 +1096,6 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@microsandbox/types@0.7.2': {}
-
   '@oxc-project/types@0.149.0': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.8':
@@ -1196,19 +1179,13 @@ snapshots:
       '@supabase/realtime-js': 2.116.0
       '@supabase/storage-js': 2.116.0
 
-  '@superradcompany/microsandbox-darwin-arm64@0.7.2':
+  '@superradcompany/microsandbox-darwin-arm64@0.5.5':
     optional: true
 
-  '@superradcompany/microsandbox-linux-arm64-gnu@0.7.2':
+  '@superradcompany/microsandbox-linux-arm64-gnu@0.5.5':
     optional: true
 
-  '@superradcompany/microsandbox-linux-x64-gnu@0.7.2':
-    optional: true
-
-  '@superradcompany/microsandbox-win32-arm64-msvc@0.7.2':
-    optional: true
-
-  '@superradcompany/microsandbox-win32-x64-msvc@0.7.2':
+  '@superradcompany/microsandbox-linux-x64-gnu@0.5.5':
     optional: true
 
   '@types/chai@5.2.3':
@@ -1293,12 +1270,12 @@ snapshots:
     dependencies:
       execa: 5.1.1
 
-  '@vercel/connect@1.0.0(ai@7.0.99(zod@4.5.4))(eve@0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.7.2))':
+  '@vercel/connect@1.0.0(ai@7.0.99(zod@4.5.4))(eve@0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.5.5))':
     dependencies:
       '@vercel/oidc': 3.8.5
     optionalDependencies:
       ai: 7.0.99(zod@4.5.4)
-      eve: 0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.7.2)
+      eve: 0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.5.5)
 
   '@vercel/oidc@3.2.0': {}
 
@@ -1361,13 +1338,13 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.9
 
-  eve@0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.7.2):
+  eve@0.54.5(ai@7.0.99(zod@4.5.4))(microsandbox@0.5.5):
     dependencies:
       ai: 7.0.99(zod@4.5.4)
       nitro: 3.0.260903-beta
       undici: 8.9.0
     optionalDependencies:
-      microsandbox: 0.7.2
+      microsandbox: 0.5.5
 
   eventsource-parser@3.1.1: {}
 
@@ -1475,15 +1452,11 @@ snapshots:
 
   merge-stream@2.0.0: {}
 
-  microsandbox@0.7.2:
-    dependencies:
-      '@microsandbox/types': 0.7.2
+  microsandbox@0.5.5:
     optionalDependencies:
-      '@superradcompany/microsandbox-darwin-arm64': 0.7.2
-      '@superradcompany/microsandbox-linux-arm64-gnu': 0.7.2
-      '@superradcompany/microsandbox-linux-x64-gnu': 0.7.2
-      '@superradcompany/microsandbox-win32-arm64-msvc': 0.7.2
-      '@superradcompany/microsandbox-win32-x64-msvc': 0.7.2
+      '@superradcompany/microsandbox-darwin-arm64': 0.5.5
+      '@superradcompany/microsandbox-linux-arm64-gnu': 0.5.5
+      '@superradcompany/microsandbox-linux-x64-gnu': 0.5.5
 
   mimic-fn@2.1.0: {}
 
