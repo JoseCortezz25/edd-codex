@@ -10,7 +10,7 @@ import { defineSandbox } from "eve/sandbox";
 export default defineSandbox({
   // Bump this when bootstrap's install steps change, so eve rebuilds the
   // template instead of reusing a stale one missing the new setup.
-  revalidationKey: () => "codex-render-pipeline-bootstrap-v1",
+  revalidationKey: () => "codex-render-pipeline-bootstrap-v2",
   async bootstrap({ use }) {
     const sandbox = await use();
     const commands = [
