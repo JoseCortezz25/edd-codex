@@ -10,13 +10,13 @@ import { defineSandbox } from "eve/sandbox";
 export default defineSandbox({
   // Bump this when bootstrap's install steps change, so eve rebuilds the
   // template instead of reusing a stale one missing the new setup.
-  revalidationKey: () => "codex-render-pipeline-bootstrap-v1",
+  revalidationKey: () => "codex-render-pipeline-bootstrap-v2",
   async bootstrap({ use }) {
     const sandbox = await use();
     const commands = [
       "sudo apt-get update && sudo apt-get install -y python3 python3-venv",
       "python3 -m venv /workspace/.venv",
-      "/workspace/.venv/bin/python -m pip install playwright==1.48.0 Pillow==11.0.0",
+      "/workspace/.venv/bin/python -m pip install playwright==1.63.0 Pillow==12.3.0",
       // --with-deps installs the system libraries Chromium needs (apt), not
       // just the browser binary — required for the browser to actually launch.
       "/workspace/.venv/bin/python -m playwright install --with-deps chromium",

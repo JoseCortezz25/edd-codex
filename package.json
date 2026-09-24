@@ -12,6 +12,7 @@
     "dev": "eve dev",
     "eval": "eve eval",
     "start": "eve start",
+    "test": "vitest run",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -19,13 +20,15 @@
     "@ai-sdk/openai-compatible": "^3.0.48",
     "@supabase/supabase-js": "^2.116.0",
     "@vercel/connect": "1.0.0",
-    "ai": "^7.0.93",
-    "eve": "^0.54.5",
+    "ai": "^7.0.105",
+    "eve": "0.63.0",
     "zod": "4.5.4"
   },
   "devDependencies": {
     "@types/node": "24.x",
-    "typescript": "7.0.2"
+    "microsandbox": "0.5.5",
+    "typescript": "7.0.2",
+    "vitest": "^5.0.1"
   },
   "engines": {
     "node": "24.x"

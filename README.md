@@ -24,6 +24,17 @@ To learn more about eve, explore these resources:
 - [Build an Agent tutorial](https://eve.dev/docs/tutorial/first-agent) — build and deploy an agent step by step.
 - [eve on GitHub](https://github.com/vercel/eve) — view the source and contribute.
 
+## Roadmap
+
+Two things this change deliberately leaves for later (see `sdd/client-brand-management`):
+
+- **Auth / tenant isolation.** There is no `defineDynamic`, no session-derived brand, and no
+  concept of a user account yet — `client_id`/`brand_id` are always explicit conversation
+  parameters. Future auth work will need to tie users → the clients they can access → the
+  brands under those clients.
+- **Campaigns.** Not modeled yet. A future campaign primitive may need its own per-campaign
+  foundations, insumos, or colors layered on top of a brand's — that shape is not solved here.
+
 ## Deploy on Vercel
 
 Deploy your agent to [Vercel](https://vercel.com) from the project root:
