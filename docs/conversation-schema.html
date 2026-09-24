@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Codex Conversation Schema</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f5f6f4; --surface:#ffffff; --ink:#1c2321; --muted:#5d6864; --line:#dde2df;
+  --accent:#2f6f5e; --accent-soft:#e3efea; --new:#8a5a14; --new-soft:#f6ecdc;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141917; --surface:#1b211f; --ink:#e4e9e6; --muted:#9aa6a1; --line:#2c3431;
+    --accent:#7cc3ad; --accent-soft:#1f2f2a; --new:#e0b36b; --new-soft:#2e261a; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1b211f; --ink:#e4e9e6; --muted:#9aa6a1; --line:#2c3431;
+  --accent:#7cc3ad; --accent-soft:#1f2f2a; --new:#e0b36b; --new-soft:#2e261a; color-scheme:dark;
+}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans);padding-inline:16px;padding-block:40px 64px}
+.wrap{max-width:1040px;margin:0 auto;display:grid;gap:40px}
+header{display:grid;gap:10px;max-width:68ch}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:30px;line-height:1.2;margin:0;font-weight:600;text-wrap:balance}
+h2{font-size:19px;margin:0 0 12px;font-weight:600;text-wrap:balance}
+p{margin:0;color:var(--muted)}
+code{font:13px var(--mono);background:var(--accent-soft);color:var(--ink);padding:1px 5px;border-radius:4px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font:13px var(--mono);color:var(--muted)}
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;overflow-x:auto}
+.diagram pre{margin:0;min-width:900px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:2px;display:inline-block}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 12px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td:first-child{font:500 13px var(--mono);white-space:nowrap}
+.tag{font:500 11px var(--mono);padding:2px 7px;border-radius:99px;white-space:nowrap}
+.tag.new{background:var(--new-soft);color:var(--new)}
+.tag.old{background:var(--accent-soft);color:var(--accent)}
+.flow{display:grid;gap:10px;margin:0;padding:0;list-style:none;counter-reset:s}
+.flow li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:10px;color:var(--muted)}
+.flow li::before{content:counter(s);font:500 13px/26px var(--mono);text-align:center;border:1px solid var(--line);border-radius:6px;color:var(--ink);background:var(--surface);height:26px}
+.flow strong{color:var(--ink);font-weight:500}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
+.note{border-left:3px solid var(--new);padding:4px 0 4px 14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">edd · supabase · migration 0003</span>
+    <h1>Codex conversation schema</h1>
+    <p>How Codex persists chat traceability on top of eve sessions, so a user can return to a conversation and continue it. eve keeps the durable session history; the app keeps the session cursor, the event log used for resume, and queryable projections for auditing.</p>
+    <div class="meta"><span>applied 2026-09-23</span><span>6 new tables</span><span>+1 column on library_assets</span><span>RLS on, no policies (service role)</span></div>
+  </header>
+
+  <section>
+    <h2>Entity relationship</h2>
+    <div class="diagram">
+<pre class="mermaid">
+erDiagram
+    clients ||--o{ brands : has
+    brands ||--o{ foundations : has
+    brands ||--o{ frameworks : has
+    brands ||--o{ library_assets : has
+    brands ||--o{ conversations : scopes
+    auth_users ||--o{ conversations : owns
+    conversations ||--o{ eve_sessions : chains
+    eve_sessions ||--o{ eve_sessions : "parent (subagent)"
+    eve_sessions ||--o{ session_events : logs
+    eve_sessions ||--o{ session_steps : runs
+    eve_sessions ||--o{ tool_invocations : executes
+    tool_invocations ||--o| input_requests : "needs approval"
+    eve_sessions ||--o{ input_requests : asks
+    auth_users ||--o{ input_requests : resolves
+    eve_sessions ||--o{ library_assets : "uploads (inbox)"
+
+    conversations {
+        uuid id PK
+        uuid user_id FK
+        uuid brand_id FK "null only for setup chats"
+        text title
+        text status "active | archived"
+        timestamptz last_message_at
+    }
+    eve_sessions {
+        uuid id PK
+        uuid conversation_id FK
+        uuid parent_session_id FK "subagent"
+        text eve_session_id UK "eve sessionId"
+        int stream_index "resume cursor"
+        text status "active | completed | failed | expired"
+        timestamptz started_at
+        timestamptz ended_at
+    }
+    session_events {
+        uuid id PK
+        uuid session_id FK
+        text event_id UK "meta.id dedupe"
+        int stream_index
+        text type
+        jsonb payload
+    }
+    session_steps {
+        uuid id PK
+        uuid session_id FK
+        text model
+        int input_tokens
+        int output_tokens
+        text status "completed | failed"
+    }
+    tool_invocations {
+        uuid id PK
+        uuid session_id FK
+        text tool_name
+        jsonb input
+        jsonb output
+        text status "pending | success | error"
+    }
+    input_requests {
+        uuid id PK
+        uuid session_id FK
+        uuid tool_invocation_id FK
+        text request_id UK "eve requestId"
+        text kind "approval | question"
+        text answer
+        uuid resolved_by FK
+    }
+    library_assets {
+        uuid id PK
+        uuid brand_id FK
+        uuid uploaded_in_session_id FK "new"
+        text type
+        text storage_path UK
+    }
+</pre>
+    </div>
+    <div class="legend">
+      <span class="chip"><span class="dot" style="background:var(--accent)"></span>crow's foot = many</span>
+      <span class="chip">All FKs <code>on delete restrict</code>, same as 0002: deletion is bottom-up and explicit</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tables</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Table</th><th>Status</th><th>Purpose</th><th>Filled from eve</th></tr></thead>
+        <tbody>
+          <tr><td>conversations</td><td><span class="tag new">new</span></td><td>What the user sees and returns to. Its <code>id</code> is the resume handle (<code>/chat/&lt;id&gt;</code>). One conversation = one brand.</td><td>—</td></tr>
+          <tr><td>eve_sessions</td><td><span class="tag new">new</span></td><td>Each real eve session. A conversation chains 1..N of them because sessions expire (default 30 days).</td><td><code>session</code> cursor, <code>subagent.called</code></td></tr>
+          <tr><td>session_events</td><td><span class="tag new">new</span></td><td>Source of truth for resume, passed back as <code>initialEvents</code>. Deduplicated by <code>event_id</code>.</td><td>every event</td></tr>
+          <tr><td>session_steps</td><td><span class="tag new">new</span></td><td>Token usage and model per step.</td><td><code>step.completed</code>, <code>step.failed</code></td></tr>
+          <tr><td>tool_invocations</td><td><span class="tag new">new</span></td><td>Queryable tool audit: which tool ran, with what, and whether it failed.</td><td><code>actions.requested</code>, <code>action.result</code></td></tr>
+          <tr><td>input_requests</td><td><span class="tag new">new</span></td><td>Human-in-the-loop approvals and questions: who approved what, and when.</td><td><code>input.requested</code>, <code>input.resolved</code></td></tr>
+          <tr><td>library_assets</td><td><span class="tag old">altered</span></td><td>Adds <code>uploaded_in_session_id</code> so inbox uploads trace back to the session they came from.</td><td>user <code>file</code> parts</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="grid2">
+    <section>
+      <h2>Resume flow</h2>
+      <ol class="flow">
+        <li><span><strong>New chat</strong>: insert a <code>conversations</code> row and an <code>eve_sessions</code> row, return the conversation <code>id</code>.</span></li>
+        <li><span><strong>Persist while streaming</strong>: upsert each event into <code>session_events</code> and advance <code>stream_index</code>.</span></li>
+        <li><span><strong>Return</strong>: load the latest active session, then call <code>useEveAgent({ initialSession, initialEvents, resume: true })</code>.</span></li>
+        <li><span><strong>Expired session</strong>: mark it <code>expired</code> and open a new <code>eve_sessions</code> row in the same conversation. The agent re-reads foundations and frameworks, not old chat.</span></li>
+      </ol>
+    </section>
+    <section>
+      <h2>Open items</h2>
+      <div style="display:grid;gap:14px">
+        <p class="note"><strong style="color:var(--ink)">Per-conversation session header.</strong> <code>agent/agent.ts</code> creates one <code>sessionId</code> per process, shared by every user. It should come from the conversation instead.</p>
+        <p class="note"><strong style="color:var(--ink)">RLS policies.</strong> Tables are service-role only for now. Browser access needs <code>user_id = auth.uid()</code> policies.</p>
+        <p class="note"><strong style="color:var(--ink)">Approval provenance.</strong> Link approved foundations and frameworks to the <code>input_requests</code> row that approved them.</p>
+      </div>
+    </section>
+  </div>
+</div>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+  mermaid.initialize({ startOnLoad: true, theme: dark ? "dark" : "neutral", er: { useMaxWidth: false } });
+</script>
+</body>
+</html>

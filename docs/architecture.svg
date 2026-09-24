@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 900" width="1180" height="900" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <rect width="1180" height="900" fill="#f8fafc"/>
+
+  <!-- Title -->
+  <text x="590" y="46" text-anchor="middle" font-size="24" font-weight="700" fill="#0f172a">Codex · edd — Arquitectura de la PoC</text>
+  <text x="590" y="72" text-anchor="middle" font-size="13" fill="#64748b">eve 0.63.0 · OpenCode Go · Supabase externo · sandbox local y en Vercel</text>
+
+  <!-- Cliente -->
+  <rect x="380" y="104" width="420" height="64" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="590" y="130" text-anchor="middle" font-size="15" font-weight="600" fill="#0f172a">Cliente — Terminal</text>
+  <text x="590" y="151" text-anchor="middle" font-size="12.5" fill="#64748b">eve dev (TUI)  ·  eve invoke</text>
+
+  <!-- Arrow cliente -> app runtime -->
+  <line x1="590" y1="168" x2="590" y2="208" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- App runtime -->
+  <rect x="200" y="212" width="780" height="176" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+  <text x="228" y="245" font-size="17" font-weight="700" fill="#1e3a8a">eve — App Runtime</text>
+  <rect x="846" y="227" width="110" height="24" rx="12" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="901" y="244" text-anchor="middle" font-size="11" fill="#1e40af">con claves</text>
+
+  <text x="228" y="281" font-size="14" fill="#1e293b">agent.ts  →  OpenCode Go  ·  glm-5.3-flash</text>
+  <text x="228" y="308" font-size="13.5" fill="#334155">tools: render_piece · scale_image · manage_client · get_library_asset</text>
+  <text x="228" y="334" font-size="13" fill="#475569">orquesta: cache de renders · upload a Storage · persistencia</text>
+  <text x="228" y="361" font-size="12.5" fill="#b45309">claves: OPENCODE_GO_API_KEY · SUPABASE_URL · SUPABASE_SECRET_KEY</text>
+
+  <!-- Arrows app runtime -> sandbox / supabase -->
+  <line x1="400" y1="388" x2="358" y2="448" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="352" y="424" text-anchor="end" font-size="12" fill="#64748b">ctx.getSandbox()</text>
+
+  <line x1="780" y1="388" x2="822" y2="448" stroke="#64748b" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="828" y="424" font-size="12" fill="#64748b">supabase-js</text>
+
+  <!-- Sandbox -->
+  <rect x="140" y="452" width="430" height="260" rx="12" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8"/>
+  <text x="166" y="485" font-size="17" font-weight="700" fill="#92400e">Sandbox — aislado</text>
+  <rect x="452" y="467" width="94" height="24" rx="12" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="499" y="484" text-anchor="middle" font-size="11" fill="#92400e">sin claves</text>
+
+  <text x="166" y="520" font-size="13.5" fill="#78350f">/workspace  (filesystem propio)</text>
+  <text x="166" y="546" font-size="13.5" fill="#78350f">python venv + Playwright + Pillow</text>
+  <text x="166" y="572" font-size="13.5" fill="#78350f">Chromium headless  →  la imprenta</text>
+  <text x="166" y="598" font-size="13.5" fill="#78350f">scripts/: export_piece.py, scale_image.py</text>
+
+  <line x1="166" y1="620" x2="544" y2="620" stroke="#fcd34d" stroke-width="1.5"/>
+
+  <text x="166" y="646" font-size="12.5" fill="#92400e">local:   microsandbox (VM)</text>
+  <text x="166" y="670" font-size="12.5" fill="#92400e">Vercel:  Vercel Sandbox (microVM)</text>
+  <text x="166" y="694" font-size="12.5" fill="#92400e">mismo /workspace en ambos</text>
+
+  <!-- Supabase -->
+  <rect x="610" y="452" width="430" height="260" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+  <text x="636" y="485" font-size="17" font-weight="700" fill="#065f46">Supabase — externo</text>
+  <rect x="922" y="467" width="94" height="24" rx="12" fill="#d1fae5" stroke="#6ee7b7"/>
+  <text x="969" y="484" text-anchor="middle" font-size="11" fill="#065f46">durable</text>
+
+  <text x="636" y="520" font-size="13.5" fill="#064e3b">Postgres — clientes, marcas, cache</text>
+  <text x="636" y="546" font-size="13.5" fill="#064e3b">Storage — logos, assets, renders</text>
+  <text x="636" y="572" font-size="13.5" fill="#064e3b">Auth — cuando la demo lo necesite</text>
+
+  <line x1="636" y1="620" x2="1014" y2="620" stroke="#6ee7b7" stroke-width="1.5"/>
+
+  <text x="636" y="646" font-size="12.5" fill="#065f46">No es backend del sandbox</text>
+  <text x="636" y="670" font-size="12.5" fill="#065f46">Sobrevive a local y a Vercel</text>
+  <text x="636" y="694" font-size="12.5" fill="#065f46">Un solo modelo de datos</text>
+
+  <!-- Footer -->
+  <line x1="140" y1="762" x2="1040" y2="762" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="590" y="794" text-anchor="middle" font-size="13" fill="#475569">Construcción = HTML  ·  Export = PNG/JPEG  ·  PoC privada en Vercel Hobby</text>
+  <text x="590" y="818" text-anchor="middle" font-size="12" fill="#94a3b8">verificado: sandbox command exit 0 en local y en Vercel</text>
+</svg>
