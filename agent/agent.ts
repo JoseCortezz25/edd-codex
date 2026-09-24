@@ -16,7 +16,7 @@ const opencodeGo = createOpenAICompatible({
 });
 
 export default defineAgent({
-  model: opencodeGo.chatModel('deepseek-v4.1-flash'),
+  model: opencodeGo.chatModel('glm-5.3-flash'),
   modelContextWindowTokens: 1_000_000,
   reasoning: 'low',
   compaction: {
