@@ -1,0 +1,438 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1760 1650" width="1760" height="1650" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<defs><marker id="crow" viewBox="0 0 14 14" refX="1" refY="7" markerWidth="13" markerHeight="13" orient="auto"><path d="M13 1 L1 7 L13 13 M1 7 L13 7" fill="none" stroke="#94a3b8" stroke-width="1.4"/></marker><marker id="one" viewBox="0 0 8 14" refX="4" refY="7" markerWidth="8" markerHeight="14" orient="auto"><path d="M4 2 L4 12" stroke="#94a3b8" stroke-width="1.6"/></marker></defs>
+<rect width="1760" height="1650" fill="#f8fafc"/>
+<text x="40" y="46" font-size="24" font-weight="700" fill="#0f172a">Codex · edd — Modelo entidad-relación (Supabase Postgres)</text>
+<text x="40" y="70" font-size="13" fill="#64748b">Estado objetivo tras las migraciones 0005 y 0006 (PR #7) · esquema public + auth.users · toda FK es ON DELETE RESTRICT (borrado bottom-up y explícito)</text>
+<rect x="24" y="96" width="1036" height="700" rx="14" fill="none" stroke="#bfdbfe" stroke-width="1.4" stroke-dasharray="4 6"/>
+<text x="40" y="118" font-size="12" font-weight="700" fill="#2563eb" letter-spacing="0.5">DOMINIO · clientes y marcas</text>
+<rect x="24" y="820" width="646" height="240" rx="14" fill="none" stroke="#ddd6fe" stroke-width="1.4" stroke-dasharray="4 6"/>
+<text x="200" y="842" font-size="12" font-weight="700" fill="#7c3aed" letter-spacing="0.5">ACCESO · membresías</text>
+<rect x="364" y="1300" width="296" height="150" rx="14" fill="none" stroke="#fde68a" stroke-width="1.4" stroke-dasharray="4 6"/>
+<text x="380" y="1322" font-size="12" font-weight="700" fill="#d97706" letter-spacing="0.5">AUTH · Supabase</text>
+<rect x="700" y="820" width="1036" height="810" rx="14" fill="none" stroke="#a7f3d0" stroke-width="1.4" stroke-dasharray="4 6"/>
+<text x="716" y="842" font-size="12" font-weight="700" fill="#059669" letter-spacing="0.5">TRAZABILIDAD · conversaciones y sesiones de eve</text>
+<path d="M304 190 L380 209" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M644 190 L720 209" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M644 190 L720 399" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M644 190 L720 589" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M172 285 L172 880" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M512 304 L512 880" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M380 1390 L304 958" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M512 1350 L512 1015" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M644 1390 L720 939" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M644 190 L720 958" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M984 920 L1060 939" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M852 1072 L852 1150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1324 920 C 1370 920 1370 958 1324 958" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-start="url(#one)" marker-end="url(#crow)"/>
+<text x="1334" y="943.0" font-size="10.5" fill="#64748b">self</text>
+<path d="M1324 920 L1400 939" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1324 920 L1400 1459" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1324 920 L1400 1209" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1192 1072 L1192 1150" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1060 920 L984 1228" fill="none" stroke="#94a3b8" stroke-width="1.5" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1060 920 L1020 608" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M1400 1190 L1324 1228" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-start="url(#one)" marker-end="url(#crow)"/>
+<path d="M644 1390 L1060 1323" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4" marker-start="url(#one)" marker-end="url(#crow)"/>
+<rect x="40" y="150" width="264" height="135" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/>
+<path d="M40 180 L40 159 Q40 150 49 150 L295 150 Q304 150 304 159 L304 180 Z" fill="#2563eb"/>
+<text x="52" y="170" font-size="13.5" font-weight="700" fill="#ffffff">clients</text>
+<text x="52" y="194" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="80" y="194" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="292" y="194" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="41" y1="199" x2="303" y2="199" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="52" y="213" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="80" y="213" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">name</text>
+<text x="292" y="213" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="41" y1="218" x2="303" y2="218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="80" y="232" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">notes</text>
+<text x="292" y="232" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="41" y1="237" x2="303" y2="237" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="80" y="251" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="292" y="251" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="41" y1="256" x2="303" y2="256" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="80" y="270" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated_at</text>
+<text x="292" y="270" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="380" y="150" width="264" height="154" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/>
+<path d="M380 180 L380 159 Q380 150 389 150 L635 150 Q644 150 644 159 L644 180 Z" fill="#2563eb"/>
+<text x="392" y="170" font-size="13.5" font-weight="700" fill="#ffffff">brands</text>
+<text x="392" y="194" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="420" y="194" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="632" y="194" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="381" y1="199" x2="643" y2="199" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="392" y="213" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="420" y="213" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">client_id</text>
+<text x="632" y="213" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="381" y1="218" x2="643" y2="218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="232" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">name</text>
+<text x="632" y="232" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="381" y1="237" x2="643" y2="237" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="251" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">notes</text>
+<text x="632" y="251" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="381" y1="256" x2="643" y2="256" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="270" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="632" y="270" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="381" y1="275" x2="643" y2="275" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="289" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated_at</text>
+<text x="632" y="289" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="720" y="150" width="264" height="173" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/>
+<path d="M720 180 L720 159 Q720 150 729 150 L975 150 Q984 150 984 159 L984 180 Z" fill="#2563eb"/>
+<text x="732" y="170" font-size="13.5" font-weight="700" fill="#ffffff">foundations</text>
+<text x="732" y="194" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="760" y="194" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="972" y="194" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="199" x2="983" y2="199" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="213" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="213" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">brand_id</text>
+<text x="972" y="213" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="218" x2="983" y2="218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="232" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">name</text>
+<text x="972" y="232" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="237" x2="983" y2="237" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="251" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">content</text>
+<text x="972" y="251" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="256" x2="983" y2="256" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="270" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">status</text>
+<text x="972" y="270" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="275" x2="983" y2="275" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="289" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="972" y="289" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="721" y1="294" x2="983" y2="294" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="308" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated_at</text>
+<text x="972" y="308" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="720" y="340" width="264" height="173" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/>
+<path d="M720 370 L720 349 Q720 340 729 340 L975 340 Q984 340 984 349 L984 370 Z" fill="#2563eb"/>
+<text x="732" y="360" font-size="13.5" font-weight="700" fill="#ffffff">frameworks</text>
+<text x="732" y="384" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="760" y="384" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="972" y="384" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="389" x2="983" y2="389" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="403" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="403" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">brand_id</text>
+<text x="972" y="403" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="408" x2="983" y2="408" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="422" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">name</text>
+<text x="972" y="422" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="427" x2="983" y2="427" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="441" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">content</text>
+<text x="972" y="441" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="446" x2="983" y2="446" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="460" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">status</text>
+<text x="972" y="460" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="465" x2="983" y2="465" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="479" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="972" y="479" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="721" y1="484" x2="983" y2="484" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="498" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated_at</text>
+<text x="972" y="498" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="720" y="530" width="300" height="230" rx="9" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.6"/>
+<path d="M720 560 L720 539 Q720 530 729 530 L1011 530 Q1020 530 1020 539 L1020 560 Z" fill="#2563eb"/>
+<text x="732" y="550" font-size="13.5" font-weight="700" fill="#ffffff">library_assets</text>
+<text x="732" y="574" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="760" y="574" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="1008" y="574" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="579" x2="1019" y2="579" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="593" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="593" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">brand_id</text>
+<text x="1008" y="593" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="598" x2="1019" y2="598" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="612" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="612" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uploaded_in_session_id</text>
+<text x="1008" y="612" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid?</text>
+<line x1="721" y1="617" x2="1019" y2="617" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="631" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">type</text>
+<text x="1008" y="631" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="636" x2="1019" y2="636" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="650" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">name</text>
+<text x="1008" y="650" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="655" x2="1019" y2="655" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="669" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="760" y="669" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">storage_path</text>
+<text x="1008" y="669" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="674" x2="1019" y2="674" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="688" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">mime_type</text>
+<text x="1008" y="688" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="721" y1="693" x2="1019" y2="693" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="707" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">byte_size</text>
+<text x="1008" y="707" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">bigint?</text>
+<line x1="721" y1="712" x2="1019" y2="712" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="726" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="1008" y="726" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="721" y1="731" x2="1019" y2="731" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="745" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated_at</text>
+<text x="1008" y="745" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="40" y="880" width="264" height="135" rx="9" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+<path d="M40 910 L40 889 Q40 880 49 880 L295 880 Q304 880 304 889 L304 910 Z" fill="#7c3aed"/>
+<text x="52" y="900" font-size="13.5" font-weight="700" fill="#ffffff">client_members</text>
+<rect x="250" y="887" width="42" height="16" rx="8" fill="#fde047"/>
+<text x="271" y="899" font-size="9.5" font-weight="700" fill="#713f12" text-anchor="middle">NEW</text>
+<text x="52" y="924" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="80" y="924" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="292" y="924" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="41" y1="929" x2="303" y2="929" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="52" y="943" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="80" y="943" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">client_id</text>
+<text x="292" y="943" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="41" y1="948" x2="303" y2="948" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="52" y="962" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="80" y="962" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">user_id</text>
+<text x="292" y="962" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="41" y1="967" x2="303" y2="967" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="80" y="981" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">role</text>
+<text x="292" y="981" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="41" y1="986" x2="303" y2="986" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="80" y="1000" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="292" y="1000" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="380" y="880" width="264" height="135" rx="9" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1.6"/>
+<path d="M380 910 L380 889 Q380 880 389 880 L635 880 Q644 880 644 889 L644 910 Z" fill="#7c3aed"/>
+<text x="392" y="900" font-size="13.5" font-weight="700" fill="#ffffff">brand_members</text>
+<rect x="590" y="887" width="42" height="16" rx="8" fill="#fde047"/>
+<text x="611" y="899" font-size="9.5" font-weight="700" fill="#713f12" text-anchor="middle">NEW</text>
+<text x="392" y="924" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="420" y="924" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="632" y="924" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="381" y1="929" x2="643" y2="929" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="392" y="943" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="420" y="943" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">brand_id</text>
+<text x="632" y="943" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="381" y1="948" x2="643" y2="948" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="392" y="962" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="420" y="962" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">user_id</text>
+<text x="632" y="962" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="381" y1="967" x2="643" y2="967" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="981" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">role</text>
+<text x="632" y="981" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="381" y1="986" x2="643" y2="986" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="1000" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="632" y="1000" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="380" y="1350" width="264" height="78" rx="9" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.6"/>
+<path d="M380 1380 L380 1359 Q380 1350 389 1350 L635 1350 Q644 1350 644 1359 L644 1380 Z" fill="#d97706"/>
+<text x="392" y="1370" font-size="13.5" font-weight="700" fill="#ffffff">auth.users</text>
+<text x="392" y="1394" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="420" y="1394" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="632" y="1394" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="381" y1="1399" x2="643" y2="1399" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="420" y="1413" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">email</text>
+<text x="632" y="1413" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<rect x="720" y="880" width="264" height="192" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M720 910 L720 889 Q720 880 729 880 L975 880 Q984 880 984 889 L984 910 Z" fill="#059669"/>
+<text x="732" y="900" font-size="13.5" font-weight="700" fill="#ffffff">conversations</text>
+<text x="732" y="924" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="760" y="924" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="972" y="924" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="929" x2="983" y2="929" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="943" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="943" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">user_id</text>
+<text x="972" y="943" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="948" x2="983" y2="948" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="962" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="962" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">brand_id</text>
+<text x="972" y="962" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid?</text>
+<line x1="721" y1="967" x2="983" y2="967" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="981" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">title</text>
+<text x="972" y="981" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="721" y1="986" x2="983" y2="986" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1000" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">status</text>
+<text x="972" y="1000" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="1005" x2="983" y2="1005" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1019" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">last_message_at</text>
+<text x="972" y="1019" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz?</text>
+<line x1="721" y1="1024" x2="983" y2="1024" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1038" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="972" y="1038" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="721" y1="1043" x2="983" y2="1043" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1057" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">updated_at</text>
+<text x="972" y="1057" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="1060" y="880" width="264" height="192" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M1060 910 L1060 889 Q1060 880 1069 880 L1315 880 Q1324 880 1324 889 L1324 910 Z" fill="#059669"/>
+<text x="1072" y="900" font-size="13.5" font-weight="700" fill="#ffffff">eve_sessions</text>
+<text x="1072" y="924" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="1100" y="924" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="1312" y="924" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1061" y1="929" x2="1323" y2="929" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="943" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1100" y="943" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">conversation_id</text>
+<text x="1312" y="943" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1061" y1="948" x2="1323" y2="948" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="962" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1100" y="962" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">parent_session_id</text>
+<text x="1312" y="962" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid?</text>
+<line x1="1061" y1="967" x2="1323" y2="967" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="981" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="1100" y="981" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">eve_session_id</text>
+<text x="1312" y="981" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1061" y1="986" x2="1323" y2="986" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1000" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">stream_index</text>
+<text x="1312" y="1000" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">integer</text>
+<line x1="1061" y1="1005" x2="1323" y2="1005" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1019" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">status</text>
+<text x="1312" y="1019" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1061" y1="1024" x2="1323" y2="1024" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1038" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">started_at</text>
+<text x="1312" y="1038" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="1061" y1="1043" x2="1323" y2="1043" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1057" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">ended_at</text>
+<text x="1312" y="1057" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz?</text>
+<rect x="1400" y="880" width="264" height="173" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M1400 910 L1400 889 Q1400 880 1409 880 L1655 880 Q1664 880 1664 889 L1664 910 Z" fill="#059669"/>
+<text x="1412" y="900" font-size="13.5" font-weight="700" fill="#ffffff">session_events</text>
+<text x="1412" y="924" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="1440" y="924" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="1652" y="924" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1401" y1="929" x2="1663" y2="929" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1412" y="943" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1440" y="943" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session_id</text>
+<text x="1652" y="943" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1401" y1="948" x2="1663" y2="948" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1412" y="962" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="1440" y="962" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">event_id</text>
+<text x="1652" y="962" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1401" y1="967" x2="1663" y2="967" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="981" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">stream_index</text>
+<text x="1652" y="981" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">integer</text>
+<line x1="1401" y1="986" x2="1663" y2="986" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1000" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">type</text>
+<text x="1652" y="1000" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1401" y1="1005" x2="1663" y2="1005" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1019" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">payload</text>
+<text x="1652" y="1019" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">jsonb</text>
+<line x1="1401" y1="1024" x2="1663" y2="1024" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1038" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="1652" y="1038" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="720" y="1150" width="264" height="192" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M720 1180 L720 1159 Q720 1150 729 1150 L975 1150 Q984 1150 984 1159 L984 1180 Z" fill="#059669"/>
+<text x="732" y="1170" font-size="13.5" font-weight="700" fill="#ffffff">messages</text>
+<rect x="930" y="1157" width="42" height="16" rx="8" fill="#fde047"/>
+<text x="951" y="1169" font-size="9.5" font-weight="700" fill="#713f12" text-anchor="middle">NEW</text>
+<text x="732" y="1194" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="760" y="1194" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="972" y="1194" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="1199" x2="983" y2="1199" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="1213" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="1213" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">conversation_id</text>
+<text x="972" y="1213" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="1218" x2="983" y2="1218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="1232" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="760" y="1232" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session_id</text>
+<text x="972" y="1232" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="721" y1="1237" x2="983" y2="1237" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="732" y="1251" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="760" y="1251" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">event_id</text>
+<text x="972" y="1251" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="1256" x2="983" y2="1256" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1270" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">role</text>
+<text x="972" y="1270" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="721" y1="1275" x2="983" y2="1275" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1289" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">content</text>
+<text x="972" y="1289" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">jsonb</text>
+<line x1="721" y1="1294" x2="983" y2="1294" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1308" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">stream_index</text>
+<text x="972" y="1308" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">integer</text>
+<line x1="721" y1="1313" x2="983" y2="1313" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="760" y="1327" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="972" y="1327" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<rect x="1060" y="1150" width="264" height="230" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M1060 1180 L1060 1159 Q1060 1150 1069 1150 L1315 1150 Q1324 1150 1324 1159 L1324 1180 Z" fill="#059669"/>
+<text x="1072" y="1170" font-size="13.5" font-weight="700" fill="#ffffff">input_requests</text>
+<text x="1072" y="1194" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="1100" y="1194" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="1312" y="1194" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1061" y1="1199" x2="1323" y2="1199" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="1213" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1100" y="1213" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session_id</text>
+<text x="1312" y="1213" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1061" y1="1218" x2="1323" y2="1218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="1232" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1100" y="1232" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">tool_invocation_id</text>
+<text x="1312" y="1232" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid?</text>
+<line x1="1061" y1="1237" x2="1323" y2="1237" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="1251" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="1100" y="1251" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">request_id</text>
+<text x="1312" y="1251" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1061" y1="1256" x2="1323" y2="1256" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1270" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">kind</text>
+<text x="1312" y="1270" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1061" y1="1275" x2="1323" y2="1275" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1289" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">options</text>
+<text x="1312" y="1289" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">jsonb?</text>
+<line x1="1061" y1="1294" x2="1323" y2="1294" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1308" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">answer</text>
+<text x="1312" y="1308" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="1061" y1="1313" x2="1323" y2="1313" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1072" y="1327" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1100" y="1327" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">resolved_by</text>
+<text x="1312" y="1327" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid?</text>
+<line x1="1061" y1="1332" x2="1323" y2="1332" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1346" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">requested_at</text>
+<text x="1312" y="1346" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="1061" y1="1351" x2="1323" y2="1351" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1100" y="1365" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">resolved_at</text>
+<text x="1312" y="1365" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz?</text>
+<rect x="1400" y="1150" width="264" height="211" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M1400 1180 L1400 1159 Q1400 1150 1409 1150 L1655 1150 Q1664 1150 1664 1159 L1664 1180 Z" fill="#059669"/>
+<text x="1412" y="1170" font-size="13.5" font-weight="700" fill="#ffffff">tool_invocations</text>
+<text x="1412" y="1194" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="1440" y="1194" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="1652" y="1194" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1401" y1="1199" x2="1663" y2="1199" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1412" y="1213" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1440" y="1213" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session_id</text>
+<text x="1652" y="1213" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1401" y1="1218" x2="1663" y2="1218" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1232" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">tool_name</text>
+<text x="1652" y="1232" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1401" y1="1237" x2="1663" y2="1237" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1251" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">input</text>
+<text x="1652" y="1251" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">jsonb</text>
+<line x1="1401" y1="1256" x2="1663" y2="1256" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1270" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">output</text>
+<text x="1652" y="1270" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">jsonb?</text>
+<line x1="1401" y1="1275" x2="1663" y2="1275" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1289" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">status</text>
+<text x="1652" y="1289" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1401" y1="1294" x2="1663" y2="1294" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1308" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">error</text>
+<text x="1652" y="1308" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="1401" y1="1313" x2="1663" y2="1313" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1327" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">started_at</text>
+<text x="1652" y="1327" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<line x1="1401" y1="1332" x2="1663" y2="1332" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1346" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">finished_at</text>
+<text x="1652" y="1346" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz?</text>
+<rect x="1400" y="1400" width="264" height="173" rx="9" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1.6"/>
+<path d="M1400 1430 L1400 1409 Q1400 1400 1409 1400 L1655 1400 Q1664 1400 1664 1409 L1664 1430 Z" fill="#059669"/>
+<text x="1412" y="1420" font-size="13.5" font-weight="700" fill="#ffffff">session_steps</text>
+<text x="1412" y="1444" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="1440" y="1444" font-size="11.5" font-weight="700" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">id</text>
+<text x="1652" y="1444" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1401" y1="1449" x2="1663" y2="1449" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1412" y="1463" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="1440" y="1463" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">session_id</text>
+<text x="1652" y="1463" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">uuid</text>
+<line x1="1401" y1="1468" x2="1663" y2="1468" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1482" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">model</text>
+<text x="1652" y="1482" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text?</text>
+<line x1="1401" y1="1487" x2="1663" y2="1487" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1501" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">input_tokens</text>
+<text x="1652" y="1501" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">integer?</text>
+<line x1="1401" y1="1506" x2="1663" y2="1506" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1520" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">output_tokens</text>
+<text x="1652" y="1520" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">integer?</text>
+<line x1="1401" y1="1525" x2="1663" y2="1525" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1539" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">status</text>
+<text x="1652" y="1539" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">text</text>
+<line x1="1401" y1="1544" x2="1663" y2="1544" stroke="#e2e8f0" stroke-width="0.8"/>
+<text x="1440" y="1558" font-size="11.5" font-weight="400" fill="#1e293b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">created_at</text>
+<text x="1652" y="1558" font-size="10.5" fill="#94a3b8" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">timestamptz</text>
+<text x="40" y="1500" font-size="12" font-weight="700" fill="#0f172a">Leyenda</text>
+<text x="40" y="1522" font-size="9.5" font-weight="700" fill="#b45309" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">PK</text>
+<text x="68" y="1522" font-size="11.5" fill="#475569">clave primaria</text>
+<text x="40" y="1542" font-size="9.5" font-weight="700" fill="#0891b2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">FK</text>
+<text x="68" y="1542" font-size="11.5" fill="#475569">clave foránea</text>
+<text x="40" y="1562" font-size="9.5" font-weight="700" fill="#7c3aed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">UQ</text>
+<text x="68" y="1562" font-size="11.5" fill="#475569">único (los únicos compuestos por marca/cliente no se muestran)</text>
+<line x1="40" y1="1578" x2="62" y2="1578" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="68" y="1582" font-size="11.5" fill="#475569">relación opcional (FK nullable) · un "?" tras el tipo indica columna nullable</text>
+<rect x="40" y="1590" width="42" height="16" rx="8" fill="#fde047"/>
+<text x="61" y="1602" font-size="9.5" font-weight="700" fill="#713f12" text-anchor="middle">NEW</text>
+<text x="92" y="1602" font-size="11.5" fill="#475569">tabla nueva en la migración 0005 (render_cache se elimina)</text>
+</svg>

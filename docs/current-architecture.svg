@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1460 940" width="1460" height="940" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#10b981"/></marker></defs>
+<rect width="1460" height="940" fill="#f8fafc"/>
+<text x="40" y="46" font-size="24" font-weight="700" fill="#0f172a">Codex · edd — Arquitectura actual (estado hoy)</text>
+<text x="40" y="70" font-size="13" fill="#64748b">eve 0.63.0 · desplegado en Vercel (prod) · OpenCode Go · glm-5.3-flash · Supabase externo · sandbox Vercel/microsandbox</text>
+<rect x="540" y="92" width="380" height="56" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/>
+<text x="730" y="116" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Usuarios</text>
+<text x="730" y="135" font-size="11.5" font-weight="400" fill="#64748b" text-anchor="middle">navegador (web app)  ·  eve TUI / API</text>
+<rect x="60" y="188" width="820" height="560" rx="16" fill="#faf5ff" stroke="#a855f7" stroke-width="1.8"/>
+<text x="84" y="214" font-size="13.5" font-weight="700" fill="#7e22ce" text-anchor="start">Vercel — plataforma (host actual)</text>
+<rect x="90" y="232" width="360" height="262" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+<text x="106" y="258" font-size="13.5" font-weight="700" fill="#1e3a8a" text-anchor="start">eve — Nitro Node 24</text>
+<text x="434" y="256" font-size="10" font-weight="700" fill="#1e40af" text-anchor="end">TRUSTED</text>
+<text x="106" y="284" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">Agent Loop  ·  ejecución del LLM</text>
+<text x="106" y="311" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">Tools · Skills · Hooks · MCP</text>
+<text x="106" y="338" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">Workflow Engine (durable)</text>
+<text x="106" y="365" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">API / HTTPS  ·  channels</text>
+<text x="106" y="392" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">AI_PROVIDER → OpenCode Go (default)</text>
+<text x="106" y="419" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">supabase-js (service_role, bypass RLS)</text>
+<text x="106" y="446" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">auth de ruta: supabaseAuth (OIDC)</text>
+<rect x="470" y="232" width="380" height="262" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="486" y="258" font-size="13.5" font-weight="700" fill="#991b1b" text-anchor="start">Vercel Sandbox</text>
+<text x="834" y="256" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="end">UNTRUSTED</text>
+<text x="486" y="284" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">microVM aislado (Vercel Sandbox)</text>
+<text x="486" y="311" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">dev local → microsandbox (microVM)</text>
+<text x="486" y="338" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">/workspace  filesystem propio</text>
+<text x="486" y="365" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">python venv + Playwright + Pillow</text>
+<text x="486" y="392" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">Chromium headless — la imprenta</text>
+<text x="486" y="419" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">render_piece → HTML a PNG/JPEG</text>
+<text x="486" y="446" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">código arbitrario, sin claves</text>
+<rect x="90" y="508" width="360" height="56" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.6"/>
+<text x="106" y="532" font-size="12.5" font-weight="700" fill="#92400e" text-anchor="start">Vercel Workflow</text>
+<text x="106" y="552" font-size="10.5" font-weight="400" fill="#92400e" text-anchor="start">estado durable de sesiones</text>
+<rect x="470" y="508" width="380" height="56" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="486" y="532" font-size="12.5" font-weight="700" fill="#334155" text-anchor="start">Vercel env vars</text>
+<text x="486" y="552" font-size="9.5" font-weight="400" fill="#475569" text-anchor="start">OPENCODE_GO_API_KEY · SUPABASE_URL · SUPABASE_SECRET_KEY</text>
+<rect x="90" y="580" width="760" height="150" rx="12" fill="#ffffff" stroke="#e9d5ff" stroke-width="1.4"/>
+<text x="108" y="606" font-size="13" font-weight="700" fill="#7e22ce" text-anchor="start">Notas del estado actual</text>
+<text x="108" y="632" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Un solo runtime de eve; build = eve build → salida Vercel; deploy con eve deploy.</text>
+<text x="108" y="652" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Mismo /workspace en Vercel Sandbox y en microsandbox local.</text>
+<text x="108" y="672" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Workflow callbacks vía /.well-known/workflow/ ; rutas de agente vía /eve/.</text>
+<text x="108" y="692" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Modelo conmutable por AI_PROVIDER: OpenCode Go (hoy) u OpenAI (GPT-5.6/6).</text>
+<text x="108" y="712" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Supabase es externo: no es backend del sandbox, sobrevive a local y a Vercel.</text>
+<rect x="920" y="232" width="480" height="300" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+<text x="944" y="258" font-size="14" font-weight="700" fill="#065f46" text-anchor="start">Supabase — externo</text>
+<text x="1376" y="256" font-size="10" font-weight="700" fill="#065f46" text-anchor="end">durable</text>
+<text x="944" y="292" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">Postgres — clientes · marcas · foundations ·</text>
+<text x="944" y="312" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">frameworks · library_assets · conversations ·</text>
+<text x="944" y="332" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">eve_sessions · … · render_cache  (+ RLS)</text>
+<line x1="944" y1="352" x2="1376" y2="352" stroke="#6ee7b7" stroke-width="1.2"/>
+<text x="944" y="378" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">Storage — bucket codex-assets</text>
+<text x="944" y="398" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">(logos · assets · renders)</text>
+<line x1="944" y1="418" x2="1376" y2="418" stroke="#6ee7b7" stroke-width="1.2"/>
+<text x="944" y="444" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">Auth — OIDC / JWKS</text>
+<text x="944" y="464" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">el web manda Bearer &lt;access token&gt;;</text>
+<text x="944" y="484" font-size="12" font-weight="400" fill="#064e3b" text-anchor="start">supabaseAuth lo verifica (iss/aud/exp)</text>
+<rect x="920" y="588" width="480" height="142" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/>
+<text x="944" y="614" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">Proveedor de modelo (externo)</text>
+<text x="944" y="646" font-size="12" font-weight="600" fill="#334155" text-anchor="start">OpenCode Go — opencode.ai/zen/go/v1</text>
+<text x="944" y="666" font-size="11.5" font-weight="400" fill="#64748b" text-anchor="start">glm-5.3-flash  ·  activo hoy</text>
+<text x="944" y="696" font-size="12" font-weight="600" fill="#334155" text-anchor="start">OpenAI — GPT-5.6 / GPT-6 families</text>
+<text x="944" y="716" font-size="11.5" font-weight="400" fill="#64748b" text-anchor="start">AI_PROVIDER=openai  ·  opcional</text>
+<line x1="660" y1="148" x2="300" y2="232" stroke="#64748b" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="470" y="196" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="middle">HTTPS  /eve/</text>
+<line x1="450" y1="350" x2="470" y2="350" stroke="#dc2626" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="470" y1="372" x2="450" y2="372" stroke="#dc2626" stroke-width="1.8" marker-end="url(#ar)"/>
+<text x="460" y="402" font-size="9.5" font-weight="400" fill="#b91c1c" text-anchor="middle">ctx.getSandbox()</text>
+<line x1="270" y1="494" x2="270" y2="508" stroke="#f59e0b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="450" y1="300" x2="920" y2="300" stroke="#10b981" stroke-width="1.8" marker-end="url(#ag)"/>
+<text x="690" y="290" font-size="10" font-weight="400" fill="#059669" text-anchor="middle">supabase-js  ·  Postgres + Storage</text>
+<line x1="920" y1="460" x2="452" y2="452" stroke="#10b981" stroke-width="1.8" stroke-dasharray="4 5" marker-end="url(#ag)"/>
+<text x="690" y="470" font-size="10" font-weight="400" fill="#059669" text-anchor="middle">verifica token del web</text>
+<line x1="450" y1="420" x2="920" y2="640" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 5" marker-end="url(#a)"/>
+<text x="690" y="545" font-size="10" font-weight="400" fill="#64748b" text-anchor="middle">llamada al modelo (AI_PROVIDER)</text>
+</svg>

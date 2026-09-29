@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1080" width="1500" height="1080" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#64748b"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker></defs>
+<rect width="1500" height="1080" fill="#f8fafc"/>
+<text x="40" y="46" font-size="24" font-weight="700" fill="#0f172a">Codex · edd — Despliegue objetivo en AWS</text>
+<text x="40" y="70" font-size="13" fill="#64748b">Salida completa de Supabase · réplica fiel de RLS · ECS on EC2 (no Fargate: el sandbox necesita virtualización)</text>
+<rect x="560" y="92" width="380" height="54" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.6"/>
+<text x="750" y="116" font-size="14" font-weight="700" fill="#0f172a" text-anchor="middle">Usuarios</text>
+<text x="750" y="135" font-size="11.5" font-weight="400" fill="#64748b" text-anchor="middle">navegador (web app)  ·  eve TUI / API</text>
+<rect x="560" y="178" width="380" height="46" rx="10" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.6"/>
+<text x="750" y="206" font-size="12.5" font-weight="600" fill="#3730a3" text-anchor="middle">Route 53 (DNS)  ·  ACM (TLS)</text>
+<rect x="520" y="252" width="460" height="58" rx="10" fill="#e0e7ff" stroke="#818cf8" stroke-width="1.6"/>
+<text x="750" y="276" font-size="13.5" font-weight="700" fill="#3730a3" text-anchor="middle">Application Load Balancer</text>
+<text x="750" y="296" font-size="11" font-weight="400" fill="#4338ca" text-anchor="middle">reenvía  /eve/  y  /.well-known/workflow/  sin reescribir</text>
+<line x1="750" y1="146" x2="750" y2="178" stroke="#64748b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="750" y1="224" x2="750" y2="252" stroke="#64748b" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="50" y="346" width="1400" height="600" rx="16" fill="none" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="3 7"/>
+<text x="74" y="372" font-size="13" font-weight="700" fill="#475569" text-anchor="start">VPC  ·  subredes públicas y privadas</text>
+<rect x="80" y="392" width="660" height="288" rx="10" fill="#f1f5f9" stroke="#64748b" stroke-width="1.6"/>
+<text x="104" y="418" font-size="13" font-weight="700" fill="#334155" text-anchor="start">ECS on EC2  ·  cluster de cómputo</text>
+<rect x="104" y="434" width="300" height="224" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
+<text x="120" y="460" font-size="13.5" font-weight="700" fill="#1e3a8a" text-anchor="start">eve — Nitro Node 24</text>
+<text x="388" y="458" font-size="10" font-weight="700" fill="#1e40af" text-anchor="end">TRUSTED</text>
+<text x="120" y="486" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">Agent Loop  ·  ejecución del LLM</text>
+<text x="120" y="512" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">Tools · Skills · Hooks · MCP</text>
+<text x="120" y="538" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">Workflow Engine (durable)</text>
+<text x="120" y="564" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">API / HTTPS  ·  channels</text>
+<text x="120" y="590" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">AI_PROVIDER → OpenAI | OpenCode</text>
+<text x="120" y="616" font-size="11.5" font-weight="400" fill="#1e293b" text-anchor="start">usa DB con service creds (bypass RLS)</text>
+<rect x="420" y="434" width="300" height="224" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.8"/>
+<text x="436" y="460" font-size="13.5" font-weight="700" fill="#991b1b" text-anchor="start">Sandbox</text>
+<text x="704" y="458" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="end">UNTRUSTED</text>
+<text x="436" y="486" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">microsandbox (microVM) o Docker</text>
+<text x="436" y="512" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">requiere virtualización (KVM)</text>
+<text x="436" y="538" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">/workspace  filesystem propio</text>
+<text x="436" y="564" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">Playwright + Chromium headless</text>
+<text x="436" y="590" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">render_piece → HTML a PNG/JPEG</text>
+<text x="436" y="616" font-size="11.5" font-weight="400" fill="#7f1d1d" text-anchor="start">código arbitrario, sin claves</text>
+<rect x="80" y="694" width="660" height="52" rx="10" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.6"/>
+<text x="104" y="726" font-size="12.5" font-weight="600" fill="#92400e" text-anchor="start">EFS — estado durable de workflows  (.eve/.workflow-data)</text>
+<line x1="560" y1="216" x2="254" y2="434" stroke="#64748b" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="520" y="400" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="end">ALB → eve</text>
+<line x1="404" y1="546" x2="420" y2="546" stroke="#dc2626" stroke-width="1.8" marker-end="url(#ar)"/>
+<line x1="420" y1="566" x2="404" y2="566" stroke="#dc2626" stroke-width="1.8" marker-end="url(#ar)"/>
+<text x="412" y="600" font-size="9.5" font-weight="400" fill="#b91c1c" text-anchor="middle">ctx.getSandbox()</text>
+<line x1="254" y1="658" x2="254" y2="694" stroke="#f59e0b" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="770" y="392" width="300" height="118" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+<text x="786" y="418" font-size="13.5" font-weight="700" fill="#065f46" text-anchor="start">RDS / Aurora Postgres</text>
+<text x="786" y="442" font-size="11.5" font-weight="400" fill="#064e3b" text-anchor="start">todas las tablas del ERD</text>
+<text x="786" y="464" font-size="11.5" font-weight="400" fill="#064e3b" text-anchor="start">RLS activo (auth.uid → dueño)</text>
+<text x="786" y="486" font-size="11.5" font-weight="400" fill="#064e3b" text-anchor="start">migraciones vía tooling propio</text>
+<rect x="770" y="524" width="300" height="66" rx="10" fill="#effdf5" stroke="#34d399" stroke-width="1.6"/>
+<text x="786" y="548" font-size="12.5" font-weight="700" fill="#065f46" text-anchor="start">Capa PostgREST-equiv</text>
+<text x="786" y="570" font-size="11" font-weight="400" fill="#047857" text-anchor="start">web → DB directo bajo RLS</text>
+<rect x="770" y="604" width="300" height="74" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.6"/>
+<text x="786" y="628" font-size="12.5" font-weight="700" fill="#92400e" text-anchor="start">Amazon Cognito (OIDC)</text>
+<text x="786" y="650" font-size="11" font-weight="400" fill="#92400e" text-anchor="start">reemplaza Supabase Auth</text>
+<text x="786" y="670" font-size="11" font-weight="400" fill="#92400e" text-anchor="start">claims JWT → roles Postgres</text>
+<rect x="1100" y="392" width="320" height="104" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
+<text x="1116" y="418" font-size="13.5" font-weight="700" fill="#065f46" text-anchor="start">S3 — assets y renders</text>
+<text x="1116" y="442" font-size="11.5" font-weight="400" fill="#064e3b" text-anchor="start">reemplaza Supabase Storage</text>
+<text x="1116" y="464" font-size="11.5" font-weight="400" fill="#064e3b" text-anchor="start">+ CloudFront / presigned URLs</text>
+<text x="1116" y="486" font-size="11.5" font-weight="400" fill="#064e3b" text-anchor="start">(URLs públicas de piezas)</text>
+<rect x="1100" y="510" width="320" height="60" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="1116" y="533" font-size="12.5" font-weight="700" fill="#334155" text-anchor="start">Secrets Manager / SSM</text>
+<text x="1116" y="554" font-size="10.5" font-weight="400" fill="#475569" text-anchor="start">OPENAI · OPENCODE_GO · DB · Cognito</text>
+<rect x="1100" y="584" width="152" height="56" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="1176" y="608" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">ECR</text>
+<text x="1176" y="627" font-size="10.5" font-weight="400" fill="#475569" text-anchor="middle">imagen</text>
+<rect x="1268" y="584" width="152" height="56" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="1344" y="608" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">CloudWatch</text>
+<text x="1344" y="627" font-size="10.5" font-weight="400" fill="#475569" text-anchor="middle">logs · métricas</text>
+<rect x="1100" y="654" width="320" height="50" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="1260" y="684" font-size="12.5" font-weight="700" fill="#334155" text-anchor="middle">NAT Gateway  ·  egress</text>
+<line x1="404" y1="470" x2="770" y2="430" stroke="#64748b" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="600" y="452" font-size="10" font-weight="400" fill="#64748b" text-anchor="middle">service creds (bypass RLS)</text>
+<line x1="404" y1="520" x2="770" y2="545" stroke="#10b981" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="720" y1="500" x2="1100" y2="440" stroke="#10b981" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="900" y="505" font-size="10" font-weight="400" fill="#059669" text-anchor="middle">upload assets/renders</text>
+<line x1="920" y1="178" x2="920" y2="545" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 5" marker-end="url(#a)"/>
+<text x="936" y="360" font-size="10" font-weight="400" fill="#64748b" text-anchor="start">web app (RLS)</text>
+<line x1="770" y1="557" x2="1070" y2="557" stroke="#34d399" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="770" y1="641" x2="1070" y2="480" stroke="#f59e0b" stroke-width="1.8" stroke-dasharray="4 5" marker-end="url(#a)"/>
+<line x1="404" y1="640" x2="1100" y2="678" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 5" marker-end="url(#a)"/>
+<rect x="1100" y="858" width="320" height="60" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.4"/>
+<text x="1260" y="882" font-size="12.5" font-weight="700" fill="#0f172a" text-anchor="middle">OpenAI  ·  OpenCode Go</text>
+<text x="1260" y="902" font-size="10.5" font-weight="400" fill="#64748b" text-anchor="middle">LLM (egress vía NAT)</text>
+<line x1="1260" y1="704" x2="1260" y2="858" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="4 5" marker-end="url(#a)"/>
+<rect x="80" y="782" width="660" height="140" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.4"/>
+<text x="98" y="810" font-size="13.5" font-weight="700" fill="#0f172a" text-anchor="start">Qué cambia al salir de Supabase</text>
+<text x="98" y="836" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Supabase Storage → S3 (+ CloudFront)      ·   3 tools de assets</text>
+<text x="98" y="854" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Supabase Postgres → RDS/Aurora            ·   query builder → cliente PG</text>
+<text x="98" y="872" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">Supabase Auth → Cognito (OIDC)            ·   verifyOidc apunta a Cognito</text>
+<text x="98" y="890" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">RLS + auth.uid() → Cognito claims → roles ·   + capa PostgREST-equiv</text>
+<text x="98" y="908" font-size="10.5" font-weight="400" fill="#334155" text-anchor="start">microsandbox/Chromium → ECS on EC2        ·   Fargate no sirve</text>
+</svg>
