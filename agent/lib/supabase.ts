@@ -41,9 +41,6 @@ export function getSupabaseClient(): SupabaseClient {
 /** Storage bucket for rendered pieces and library assets, overridable via env. */
 export const CODEX_ASSETS_BUCKET = process.env.SUPABASE_ASSETS_BUCKET ?? "codex-assets";
 
-/** Name of the render-cache table (hash -> already-uploaded URL). */
-export const RENDER_CACHE_TABLE = "render_cache";
-
 /** ~3 MiB, the point past which eve keeps an image as a file reference instead of inline bytes. */
 export const INLINE_FILE_BYTE_LIMIT = 3 * 1024 * 1024;
 
