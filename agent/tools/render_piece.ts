@@ -4,7 +4,6 @@ import { z } from "zod";
 import {
   CODEX_ASSETS_BUCKET,
   INLINE_FILE_BYTE_LIMIT,
-  RENDER_CACHE_TABLE,
   getSupabaseClient,
 } from "#lib/supabase";
 
@@ -37,7 +36,6 @@ type RenderPieceInput = z.infer<typeof inputSchema>;
 
 const outputSchema = z.object({
   url: z.string(),
-  cached: z.boolean(),
   hash: z.string(),
   width: z.number(),
   height: z.number(),
@@ -45,31 +43,11 @@ const outputSchema = z.object({
   imageBase64: z.string().nullable(),
 });
 
-interface RenderCacheRow {
-  hash: string;
-  url: string;
-  width: number;
-  height: number;
-  format: string;
-  created_at: string;
-}
-
 /**
- * Cache key = sha256(html/htmlString value + width + height + format + scale).
- *
- * Deliberate simplification vs research/arquitectura-remota-eve-dev.md §7 (which
- * proposed hashing "HTML final + tokens/foundations usados + tamaño de salida"):
- * hashing only the literal value passed for `html`/`htmlString` already captures
- * resolved tokens/foundations whenever the caller passes `htmlString`, because
- * those are embedded verbatim in the final HTML string — no separate
- * tokens/foundations hash is needed. This also lets the cache be consulted
- * before ever touching the sandbox (the real savings §7 asks for).
- *
- * Caveat: if `html` is a sandbox *path* and the file's content changes without
- * the path changing, the cache will not detect that (the path string, not the
- * file's bytes, is what gets hashed). Pass `htmlString` when that matters.
+ * Content hash = sha256(html/htmlString value + width + height + format + scale).
+ * Used only to name the sandbox and storage artifacts of a render.
  */
-function computeCacheHash(input: RenderPieceInput): string {
+function computeRenderHash(input: RenderPieceInput): string {
   const hash = createHash("sha256");
   hash.update(input.html ?? input.htmlString ?? "");
   hash.update(String(input.width));
@@ -86,41 +64,17 @@ function extensionFor(format: string): string {
 export default defineTool({
   description:
     "Render an HTML piece to a raster image (PNG/JPEG/WebP) with an exact pixel clip, using the " +
-    "shared codex-render-pipeline export_piece.py script in the sandbox. Checks a Supabase-backed " +
-    "render cache first (by content hash) and returns the already-uploaded URL without touching " +
-    "the sandbox when the same content was already rendered.",
+    "shared codex-render-pipeline export_piece.py script in the sandbox. Every call renders " +
+    "for real and uploads the result to Supabase Storage.",
   inputSchema,
   outputSchema,
   label: {
     start: ({ width, height, format }) => `Render ${width}x${height} ${format ?? "png"} piece`,
   },
   async execute(input, ctx) {
-    const hash = computeCacheHash(input);
+    const hash = computeRenderHash(input);
     const supabase = getSupabaseClient();
 
-    const { data: cached, error: cacheReadError } = await supabase
-      .from(RENDER_CACHE_TABLE)
-      .select("hash,url,width,height,format,created_at")
-      .eq("hash", hash)
-      .maybeSingle<RenderCacheRow>();
-
-    if (cacheReadError) {
-      throw new Error(`Render cache lookup failed: ${cacheReadError.message}`);
-    }
-
-    if (cached) {
-      return {
-        url: cached.url,
-        cached: true,
-        hash,
-        width: cached.width,
-        height: cached.height,
-        format: cached.format,
-        imageBase64: null,
-      };
-    }
-
-    // Cache miss: render for real in the sandbox.
     const sandbox = await ctx.getSandbox();
     const venvPython = "/workspace/.venv/bin/python";
     const scriptPath = sandbox.resolvePath("scripts/export_piece.py");
@@ -181,23 +135,10 @@ export default defineTool({
     const { data: publicUrlData } = supabase.storage.from(CODEX_ASSETS_BUCKET).getPublicUrl(storagePath);
     const url = publicUrlData.publicUrl;
 
-    const { error: insertError } = await supabase.from(RENDER_CACHE_TABLE).insert({
-      hash,
-      url,
-      width: input.width,
-      height: input.height,
-      format: input.format,
-    });
-    // 23505 = unique_violation: a concurrent render already inserted this hash first. Not an error.
-    if (insertError && (insertError as { code?: string }).code !== "23505") {
-      throw new Error(`Failed to write render cache row: ${insertError.message}`);
-    }
-
     const withinInlineLimit = buffer.byteLength <= INLINE_FILE_BYTE_LIMIT;
 
     return {
       url,
-      cached: false,
       hash,
       width: input.width,
       height: input.height,
@@ -206,18 +147,17 @@ export default defineTool({
     };
   },
   toModelOutput(output) {
-    const status = output.cached ? "cache hit" : "newly rendered";
     if (output.imageBase64) {
       const mediaType = FORMAT_MEDIA_TYPE[output.format] ?? "image/png";
       return toolOutput.content([
         toolOutputPart.text(
-          `Rendered ${output.width}x${output.height} ${output.format} (${status}): ${output.url}`,
+          `Rendered ${output.width}x${output.height} ${output.format}: ${output.url}`,
         ),
         toolOutputPart.file(output.imageBase64, { mediaType }),
       ]);
     }
     return toolOutput.text(
-      `Rendered ${output.width}x${output.height} ${output.format} (${status}). Image exceeds the ` +
+      `Rendered ${output.width}x${output.height} ${output.format}. Image exceeds the ` +
         `~3 MiB inline limit; fetch it from ${output.url} or via get_library_asset instead.`,
     );
   },
